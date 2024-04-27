@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: metrics-exporter
+spec:
+  selector:
+    app: metrics-exporter
+  ports:
+    - protocol: TCP
+      port: 443        # Standard HTTPS port, but this is optional
+      targetPort: 5001 # application's listening port
